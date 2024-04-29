@@ -37,6 +37,9 @@ GestionSon_Start
 	bx lr
 
 GestionSon_callback
+	push {lr}
+	push {r4-r8}
+	
 	; Mise à jour index
 	ldr r8, =GestionSon_Index ; Met dans r0 l'adresse représentée par GestionSon_Index
 	ldr r1, [r8]              ; Met dans r0 la valeur située à cette adresse
@@ -47,7 +50,7 @@ GestionSon_callback
 	; Quitter la fonction si la longueur est atteinte
 	cmp r1, r3
 	beq exit 
-
+	
 	; Sinon, faire la mise à l'échelle
 	ldr r4, =Son
 	ldrsh r4, [r4, r1, lsl #1] ; Récupérer l'indice GestionSon_Index de Son[]
@@ -66,10 +69,10 @@ GestionSon_callback
 	str r1, [r8]              ; Réécrit la nouvelle valeur à l'adresse
 	
 	mov r0, r4
-	push {lr}
+	
+	pop {r4-r8}
 	bl ServJeuLASER_WritePWMSoundVal
 	pop {pc}
-	
 exit
 	bx lr
 	

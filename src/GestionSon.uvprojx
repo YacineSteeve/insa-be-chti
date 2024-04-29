@@ -339,7 +339,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>STM32F103xB,USE_FULL_LL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Driver</IncludePath>
+              <IncludePath>.\Driver;.\GestionSon</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -403,6 +403,11 @@
               <FileType>2</FileType>
               <FilePath>.\GestionSon\bruitverre.asm</FilePath>
             </File>
+            <File>
+              <FileName>GestionSon.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GestionSon\GestionSon.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -427,6 +432,41 @@
               <FileName>startup-rvds.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\System\startup-rvds.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ServiceDFT</GroupName>
+          <Files>
+            <File>
+              <FileName>DFT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ServiceDFT\DFT.c</FilePath>
+            </File>
+            <File>
+              <FileName>DFT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ServiceDFT\DFT.h</FilePath>
+            </File>
+            <File>
+              <FileName>CosSin_Fract_1_15.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\ServiceDFT\CosSin_Fract_1_15.asm</FilePath>
+            </File>
+            <File>
+              <FileName>CosSin_Fract_1_15.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ServiceDFT\CosSin_Fract_1_15.h</FilePath>
+            </File>
+            <File>
+              <FileName>Signal_4_12.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\ServiceDFT\Signal_4_12.asm</FilePath>
+            </File>
+            <File>
+              <FileName>Signal_4_12.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ServiceDFT\Signal_4_12.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -837,7 +877,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>STM32F103xB,USE_FULL_LL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Driver</IncludePath>
+              <IncludePath>.\Driver;.\ServiceDFT;.\GestionSon</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -901,6 +941,11 @@
               <FileType>2</FileType>
               <FilePath>.\GestionSon\bruitverre.asm</FilePath>
             </File>
+            <File>
+              <FileName>GestionSon.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GestionSon\GestionSon.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -925,6 +970,41 @@
               <FileName>startup-rvds.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\System\startup-rvds.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ServiceDFT</GroupName>
+          <Files>
+            <File>
+              <FileName>DFT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ServiceDFT\DFT.c</FilePath>
+            </File>
+            <File>
+              <FileName>DFT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ServiceDFT\DFT.h</FilePath>
+            </File>
+            <File>
+              <FileName>CosSin_Fract_1_15.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\ServiceDFT\CosSin_Fract_1_15.asm</FilePath>
+            </File>
+            <File>
+              <FileName>CosSin_Fract_1_15.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ServiceDFT\CosSin_Fract_1_15.h</FilePath>
+            </File>
+            <File>
+              <FileName>Signal_4_12.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\ServiceDFT\Signal_4_12.asm</FilePath>
+            </File>
+            <File>
+              <FileName>Signal_4_12.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ServiceDFT\Signal_4_12.h</FilePath>
             </File>
           </Files>
         </Group>
