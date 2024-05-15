@@ -4,12 +4,22 @@ Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
 
 Section Cross References
 
+    principal.o(i.get_index_of_freq) refers to principal.o(.data) for freq_indexes
     principal.o(i.main) refers to clock.o(i.CLOCK_Configure) for CLOCK_Configure
-    principal.o(i.main) refers to dft.o(i.DFT) for DFT
-    principal.o(i.main) refers to gestionson.o(moncode) for GestionSon_Start
-    principal.o(i.main) refers to signal_4_12.o(Signal) for LeSignal
-    principal.o(i.main) refers to principal.o(.bss) for d
-    principal.o(i.main) refers to principal.o(.data) for bouton
+    principal.o(i.main) refers to servicejeulaser.o(i.ServJeuLASER_Son_Init) for ServJeuLASER_Son_Init
+    principal.o(i.main) refers to servicejeulaser.o(i.ServJeuLASER_ADC_DMA) for ServJeuLASER_ADC_DMA
+    principal.o(i.main) refers to servicejeulaser.o(i.ServJeuLASER_Systick_IT_Init) for ServJeuLASER_Systick_IT_Init
+    principal.o(i.main) refers to gestionson.o(moncode) for GestionSon_callback
+    principal.o(i.main) refers to principal.o(.bss) for signal
+    principal.o(i.main) refers to principal.o(i.mesures_and_dft) for mesures_and_dft
+    principal.o(i.main) refers to principal.o(.data) for interruption_period
+    principal.o(i.mesures_and_dft) refers to servicejeulaser.o(i.ServJeuLASER_StartDMA) for ServJeuLASER_StartDMA
+    principal.o(i.mesures_and_dft) refers to dft.o(i.DFT) for DFT
+    principal.o(i.mesures_and_dft) refers to principal.o(i.high_index) for high_index
+    principal.o(i.mesures_and_dft) refers to principal.o(i.get_index_of_freq) for get_index_of_freq
+    principal.o(i.mesures_and_dft) refers to gestionson.o(moncode) for GestionSon_Start
+    principal.o(i.mesures_and_dft) refers to principal.o(.data) for touched
+    principal.o(i.mesures_and_dft) refers to principal.o(.bss) for signal
     gestionson.o(moncode) refers to servicejeulaser.o(i.ServJeuLASER_WritePWMSoundVal) for ServJeuLASER_WritePWMSoundVal
     gestionson.o(moncode) refers to principal.o(.data) for GestionSon_Index
     gestionson.o(moncode) refers to bruitverre.o(SecSon) for LongueurSon
@@ -35,6 +45,11 @@ Section Cross References
     startup-rvds.o(RESET) refers to timer_1234.o(i.TIM4_IRQHandler) for TIM4_IRQHandler
     startup-rvds.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
     dft.o(i.DFT) refers to cossin_fract_1_15.o(Trigo) for TabCos
+    affichage_valise.o(.text) refers to timer_1234.o(i.Timer_1234_Init_ff) for Timer_1234_Init_ff
+    affichage_valise.o(.text) refers to timer_1234.o(i.Active_IT_Debordement_Timer) for Active_IT_Debordement_Timer
+    affichage_valise.o(.text) refers to gpio.o(i.GPIO_Configure) for GPIO_Configure
+    affichage_valise.o(.text) refers to affichage_valise.o(.data) for SPI_Soft_En_Cours
+    affichage_valise.o(.text) refers to affichage_valise.o(.bss) for Trame
     adc_dma.o(i.ADC_IRQHandler) refers to adc_dma.o(.data) for .data
     adc_dma.o(i.DMAChannel1_IRQHandler) refers to adc_dma.o(.data) for .data
     adc_dma.o(i.Init_Conversion_On_Trig_Timer_ff) refers to timer_1234.o(i.PWM_Init_ff) for PWM_Init_ff
@@ -144,35 +159,28 @@ Removing Unused input sections from the image.
     Removing servicejeulaser.o(.rev16_text), (4 bytes).
     Removing servicejeulaser.o(.revsh_text), (4 bytes).
     Removing servicejeulaser.o(.rrx_text), (6 bytes).
-    Removing servicejeulaser.o(i.ServJeuLASER_ADC_DMA), (44 bytes).
-    Removing servicejeulaser.o(i.ServJeuLASER_Son_Init), (76 bytes).
-    Removing servicejeulaser.o(i.ServJeuLASER_StartDMA), (32 bytes).
-    Removing servicejeulaser.o(i.ServJeuLASER_Systick_IT_Init), (60 bytes).
     Removing startup-rvds.o(HEAP), (512 bytes).
+    Removing signal_4_12.o(Signal), (128 bytes).
+    Removing affichage_valise.o(.rev16_text), (4 bytes).
+    Removing affichage_valise.o(.revsh_text), (4 bytes).
+    Removing affichage_valise.o(.text), (888 bytes).
+    Removing affichage_valise.o(.bss), (10 bytes).
+    Removing affichage_valise.o(.data), (12 bytes).
     Removing adc_dma.o(.rev16_text), (4 bytes).
     Removing adc_dma.o(.revsh_text), (4 bytes).
     Removing adc_dma.o(.rrx_text), (6 bytes).
     Removing adc_dma.o(i.ADC_IRQHandler), (60 bytes).
     Removing adc_dma.o(i.DMAChannel1_IRQHandler), (28 bytes).
-    Removing adc_dma.o(i.Init_ADC1_DMA1), (76 bytes).
-    Removing adc_dma.o(i.Init_Conversion_On_Trig_Timer_ff), (112 bytes).
     Removing adc_dma.o(i.Init_IT_ADC_EOC), (64 bytes).
     Removing adc_dma.o(i.Init_IT_End_Of_DMA1), (48 bytes).
     Removing adc_dma.o(i.Init_MultiChan_Regular), (140 bytes).
-    Removing adc_dma.o(i.Init_TimingADC_ActiveADC_ff), (212 bytes).
-    Removing adc_dma.o(i.Single_Channel_ADC), (16 bytes).
-    Removing adc_dma.o(i.Start_DMA1), (28 bytes).
     Removing adc_dma.o(i.Wait_On_EOC_ADC), (24 bytes).
-    Removing adc_dma.o(i.Wait_On_End_Of_DMA1), (24 bytes).
     Removing adc_dma.o(.data), (12 bytes).
     Removing clock.o(.rev16_text), (4 bytes).
     Removing clock.o(.revsh_text), (4 bytes).
     Removing clock.o(.rrx_text), (6 bytes).
-    Removing clock.o(i.CLOCK_GetADCCLK), (8 bytes).
-    Removing clock.o(i.CLOCK_GetHCLK), (8 bytes).
     Removing clock.o(i.CLOCK_GetPCLK1), (8 bytes).
     Removing clock.o(i.CLOCK_GetPCLK2), (8 bytes).
-    Removing clock.o(i.CLOCK_GetTIMCLK), (36 bytes).
     Removing gpio.o(.rev16_text), (4 bytes).
     Removing gpio.o(.revsh_text), (4 bytes).
     Removing gpio.o(.rrx_text), (6 bytes).
@@ -182,27 +190,21 @@ Removing Unused input sections from the image.
     Removing gpio.o(i.GPIOB_Set), (16 bytes).
     Removing gpio.o(i.GPIOC_Clear), (16 bytes).
     Removing gpio.o(i.GPIOC_Set), (16 bytes).
-    Removing gpio.o(i.GPIO_Configure), (264 bytes).
     Removing timer_1234.o(.rev16_text), (4 bytes).
     Removing timer_1234.o(.revsh_text), (4 bytes).
     Removing timer_1234.o(.rrx_text), (6 bytes).
     Removing timer_1234.o(i.Active_IT_Compare_Timer), (492 bytes).
-    Removing timer_1234.o(i.Active_IT_Debordement_Timer), (228 bytes).
     Removing timer_1234.o(i.Capture_Init), (484 bytes).
     Removing timer_1234.o(i.Lire_Duree_Pulse), (96 bytes).
     Removing timer_1234.o(i.PWM_Complementaire_Timer1), (60 bytes).
     Removing timer_1234.o(i.PWM_Init), (200 bytes).
-    Removing timer_1234.o(i.PWM_Init_ff), (172 bytes).
     Removing timer_1234.o(i.PWM_Set_Value_TIM3_Ch3), (12 bytes).
     Removing timer_1234.o(i.Timer_1234_Init), (268 bytes).
-    Removing timer_1234.o(i.Timer_1234_Init_ff), (124 bytes).
     Removing timer_1234.o(i.Timer_Inc_Init), (180 bytes).
     Removing timer_systick.o(.rev16_text), (4 bytes).
     Removing timer_systick.o(.revsh_text), (4 bytes).
     Removing timer_systick.o(.rrx_text), (6 bytes).
     Removing timer_systick.o(i.Systick_Period), (196 bytes).
-    Removing timer_systick.o(i.Systick_Period_ff), (34 bytes).
-    Removing timer_systick.o(i.Systick_Prio_IT), (20 bytes).
     Removing fmul.o(.text), (100 bytes).
     Removing fdiv.o(.text), (124 bytes).
     Removing fscalb.o(.text), (24 bytes).
@@ -218,7 +220,7 @@ Removing Unused input sections from the image.
     Removing fepilogue.o(.text), (110 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-81 unused section(s) (total 6208 bytes) removed from the image.
+68 unused section(s) (total 5680 bytes) removed from the image.
 
 ==============================================================================
 
@@ -228,39 +230,41 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
-    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
     ../fplib/microlib/fpscalb.c              0x00000000   Number         0  fscalb.o ABSOLUTE
+    Affichage_Valise.c                       0x00000000   Number         0  affichage_valise.o ABSOLUTE
+    Affichage_Valise.c                       0x00000000   Number         0  affichage_valise.o ABSOLUTE
     Driver\ServiceJeuLaser.c                 0x00000000   Number         0  servicejeulaser.o ABSOLUTE
     Driver\\ServiceJeuLaser.c                0x00000000   Number         0  servicejeulaser.o ABSOLUTE
     GestionSon\GestionSon.s                  0x00000000   Number         0  gestionson.o ABSOLUTE
@@ -298,59 +302,80 @@ Image Symbol Table
     __lit__00000000                          0x08000100   Data           4  entry2.o(.ARM.Collect$$$$00002712)
     .text                                    0x08000104   Section       76  startup-rvds.o(.text)
     .text                                    0x08000150   Section       36  init.o(.text)
-    i.CLOCK_Configure                        0x08000174   Section        0  clock.o(i.CLOCK_Configure)
-    i.CLOCK_HPRECompute                      0x080001e8   Section        0  clock.o(i.CLOCK_HPRECompute)
-    CLOCK_HPRECompute                        0x080001e9   Thumb Code   116  clock.o(i.CLOCK_HPRECompute)
-    i.DFT                                    0x0800025c   Section        0  dft.o(i.DFT)
-    i.ServJeuLASER_WritePWMSoundVal          0x080002c8   Section        0  servicejeulaser.o(i.ServJeuLASER_WritePWMSoundVal)
-    i.SysTick_Handler                        0x080002d4   Section        0  timer_systick.o(i.SysTick_Handler)
-    i.TIM1_CC_IRQHandler                     0x080002e0   Section        0  timer_1234.o(i.TIM1_CC_IRQHandler)
-    i.TIM1_UP_IRQHandler                     0x080003ec   Section        0  timer_1234.o(i.TIM1_UP_IRQHandler)
-    i.TIM2_IRQHandler                        0x08000404   Section        0  timer_1234.o(i.TIM2_IRQHandler)
-    i.TIM3_IRQHandler                        0x08000514   Section        0  timer_1234.o(i.TIM3_IRQHandler)
-    i.TIM4_IRQHandler                        0x08000640   Section        0  timer_1234.o(i.TIM4_IRQHandler)
-    i.__scatterload_copy                     0x0800076c   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0800077a   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x0800077c   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.main                                   0x0800078c   Section        0  principal.o(i.main)
-    moncode                                  0x080007cc   Section      104  gestionson.o(moncode)
-    SecSon                                   0x08000854   Section    11032  bruitverre.o(SecSon)
-    Signal                                   0x0800336c   Section      128  signal_4_12.o(Signal)
-    Trigo                                    0x080033ec   Section      256  cossin_fract_1_15.o(Trigo)
-    .data                                    0x20000000   Section       12  principal.o(.data)
-    .data                                    0x2000000c   Section      160  timer_1234.o(.data)
-    Ptr_TIM1                                 0x2000001c   Data           4  timer_1234.o(.data)
-    Ptr_TIM2                                 0x20000020   Data           4  timer_1234.o(.data)
-    Ptr_TIM3                                 0x20000024   Data           4  timer_1234.o(.data)
-    Ptr_TIM4                                 0x20000028   Data           4  timer_1234.o(.data)
-    Ptr_TIM1_Voie1                           0x2000002c   Data           4  timer_1234.o(.data)
-    Ptr_TIM1_Voie2                           0x20000030   Data           4  timer_1234.o(.data)
-    Ptr_TIM1_Voie3                           0x20000034   Data           4  timer_1234.o(.data)
-    Ptr_TIM1_Voie4                           0x20000038   Data           4  timer_1234.o(.data)
-    Ptr_TIM2_Voie1                           0x2000003c   Data           4  timer_1234.o(.data)
-    Ptr_TIM2_Voie2                           0x20000040   Data           4  timer_1234.o(.data)
-    Ptr_TIM2_Voie3                           0x20000044   Data           4  timer_1234.o(.data)
-    Ptr_TIM2_Voie4                           0x20000048   Data           4  timer_1234.o(.data)
-    Ptr_TIM3_Voie1                           0x2000004c   Data           4  timer_1234.o(.data)
-    Ptr_TIM3_Voie2                           0x20000050   Data           4  timer_1234.o(.data)
-    Ptr_TIM3_Voie3                           0x20000054   Data           4  timer_1234.o(.data)
-    Ptr_TIM3_Voie4                           0x20000058   Data           4  timer_1234.o(.data)
-    Ptr_TIM4_Voie1                           0x2000005c   Data           4  timer_1234.o(.data)
-    Ptr_TIM4_Voie2                           0x20000060   Data           4  timer_1234.o(.data)
-    Ptr_TIM4_Voie3                           0x20000064   Data           4  timer_1234.o(.data)
-    Ptr_TIM4_Voie4                           0x20000068   Data           4  timer_1234.o(.data)
-    Duree_Pulse_T1                           0x2000006c   Data           8  timer_1234.o(.data)
-    Duree_Pulse_T2                           0x20000074   Data           8  timer_1234.o(.data)
-    Duree_Pulse_T3                           0x2000007c   Data           8  timer_1234.o(.data)
-    Duree_Pulse_T4                           0x20000084   Data           8  timer_1234.o(.data)
-    Date_T1                                  0x2000008c   Data           8  timer_1234.o(.data)
-    Date_T2                                  0x20000094   Data           8  timer_1234.o(.data)
-    Date_T3                                  0x2000009c   Data           8  timer_1234.o(.data)
-    Date_T4                                  0x200000a4   Data           8  timer_1234.o(.data)
-    .data                                    0x200000ac   Section        4  timer_systick.o(.data)
-    Ptr_Systick                              0x200000ac   Data           4  timer_systick.o(.data)
-    .bss                                     0x200000b0   Section      256  principal.o(.bss)
-    STACK                                    0x200001b0   Section     1024  startup-rvds.o(STACK)
+    i.Active_IT_Debordement_Timer            0x08000174   Section        0  timer_1234.o(i.Active_IT_Debordement_Timer)
+    i.CLOCK_Configure                        0x08000258   Section        0  clock.o(i.CLOCK_Configure)
+    i.CLOCK_GetADCCLK                        0x080002cc   Section        0  clock.o(i.CLOCK_GetADCCLK)
+    i.CLOCK_GetHCLK                          0x080002d4   Section        0  clock.o(i.CLOCK_GetHCLK)
+    i.CLOCK_GetTIMCLK                        0x080002dc   Section        0  clock.o(i.CLOCK_GetTIMCLK)
+    i.CLOCK_HPRECompute                      0x08000300   Section        0  clock.o(i.CLOCK_HPRECompute)
+    CLOCK_HPRECompute                        0x08000301   Thumb Code   116  clock.o(i.CLOCK_HPRECompute)
+    i.DFT                                    0x08000374   Section        0  dft.o(i.DFT)
+    i.GPIO_Configure                         0x080003e0   Section        0  gpio.o(i.GPIO_Configure)
+    i.Init_ADC1_DMA1                         0x080004e8   Section        0  adc_dma.o(i.Init_ADC1_DMA1)
+    i.Init_Conversion_On_Trig_Timer_ff       0x08000534   Section        0  adc_dma.o(i.Init_Conversion_On_Trig_Timer_ff)
+    i.Init_TimingADC_ActiveADC_ff            0x080005a4   Section        0  adc_dma.o(i.Init_TimingADC_ActiveADC_ff)
+    i.PWM_Init_ff                            0x08000678   Section        0  timer_1234.o(i.PWM_Init_ff)
+    i.ServJeuLASER_ADC_DMA                   0x08000724   Section        0  servicejeulaser.o(i.ServJeuLASER_ADC_DMA)
+    i.ServJeuLASER_Son_Init                  0x08000750   Section        0  servicejeulaser.o(i.ServJeuLASER_Son_Init)
+    i.ServJeuLASER_StartDMA                  0x0800079c   Section        0  servicejeulaser.o(i.ServJeuLASER_StartDMA)
+    i.ServJeuLASER_Systick_IT_Init           0x080007bc   Section        0  servicejeulaser.o(i.ServJeuLASER_Systick_IT_Init)
+    i.ServJeuLASER_WritePWMSoundVal          0x080007f8   Section        0  servicejeulaser.o(i.ServJeuLASER_WritePWMSoundVal)
+    i.Single_Channel_ADC                     0x08000804   Section        0  adc_dma.o(i.Single_Channel_ADC)
+    i.Start_DMA1                             0x08000814   Section        0  adc_dma.o(i.Start_DMA1)
+    i.SysTick_Handler                        0x08000830   Section        0  timer_systick.o(i.SysTick_Handler)
+    i.Systick_Period_ff                      0x0800083c   Section        0  timer_systick.o(i.Systick_Period_ff)
+    i.Systick_Prio_IT                        0x08000860   Section        0  timer_systick.o(i.Systick_Prio_IT)
+    i.TIM1_CC_IRQHandler                     0x08000874   Section        0  timer_1234.o(i.TIM1_CC_IRQHandler)
+    i.TIM1_UP_IRQHandler                     0x08000980   Section        0  timer_1234.o(i.TIM1_UP_IRQHandler)
+    i.TIM2_IRQHandler                        0x08000998   Section        0  timer_1234.o(i.TIM2_IRQHandler)
+    i.TIM3_IRQHandler                        0x08000aa8   Section        0  timer_1234.o(i.TIM3_IRQHandler)
+    i.TIM4_IRQHandler                        0x08000bd4   Section        0  timer_1234.o(i.TIM4_IRQHandler)
+    i.Timer_1234_Init_ff                     0x08000d00   Section        0  timer_1234.o(i.Timer_1234_Init_ff)
+    i.Wait_On_End_Of_DMA1                    0x08000d7c   Section        0  adc_dma.o(i.Wait_On_End_Of_DMA1)
+    i.__scatterload_copy                     0x08000d94   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08000da2   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08000da4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.get_index_of_freq                      0x08000db4   Section        0  principal.o(i.get_index_of_freq)
+    i.high_index                             0x08000dd8   Section        0  principal.o(i.high_index)
+    i.main                                   0x08000df8   Section        0  principal.o(i.main)
+    i.mesures_and_dft                        0x08000e2c   Section        0  principal.o(i.mesures_and_dft)
+    moncode                                  0x08000ef0   Section      104  gestionson.o(moncode)
+    SecSon                                   0x08000f78   Section    11032  bruitverre.o(SecSon)
+    Trigo                                    0x08003a90   Section      256  cossin_fract_1_15.o(Trigo)
+    .data                                    0x20000000   Section       60  principal.o(.data)
+    .data                                    0x2000003c   Section      160  timer_1234.o(.data)
+    Ptr_TIM1                                 0x2000004c   Data           4  timer_1234.o(.data)
+    Ptr_TIM2                                 0x20000050   Data           4  timer_1234.o(.data)
+    Ptr_TIM3                                 0x20000054   Data           4  timer_1234.o(.data)
+    Ptr_TIM4                                 0x20000058   Data           4  timer_1234.o(.data)
+    Ptr_TIM1_Voie1                           0x2000005c   Data           4  timer_1234.o(.data)
+    Ptr_TIM1_Voie2                           0x20000060   Data           4  timer_1234.o(.data)
+    Ptr_TIM1_Voie3                           0x20000064   Data           4  timer_1234.o(.data)
+    Ptr_TIM1_Voie4                           0x20000068   Data           4  timer_1234.o(.data)
+    Ptr_TIM2_Voie1                           0x2000006c   Data           4  timer_1234.o(.data)
+    Ptr_TIM2_Voie2                           0x20000070   Data           4  timer_1234.o(.data)
+    Ptr_TIM2_Voie3                           0x20000074   Data           4  timer_1234.o(.data)
+    Ptr_TIM2_Voie4                           0x20000078   Data           4  timer_1234.o(.data)
+    Ptr_TIM3_Voie1                           0x2000007c   Data           4  timer_1234.o(.data)
+    Ptr_TIM3_Voie2                           0x20000080   Data           4  timer_1234.o(.data)
+    Ptr_TIM3_Voie3                           0x20000084   Data           4  timer_1234.o(.data)
+    Ptr_TIM3_Voie4                           0x20000088   Data           4  timer_1234.o(.data)
+    Ptr_TIM4_Voie1                           0x2000008c   Data           4  timer_1234.o(.data)
+    Ptr_TIM4_Voie2                           0x20000090   Data           4  timer_1234.o(.data)
+    Ptr_TIM4_Voie3                           0x20000094   Data           4  timer_1234.o(.data)
+    Ptr_TIM4_Voie4                           0x20000098   Data           4  timer_1234.o(.data)
+    Duree_Pulse_T1                           0x2000009c   Data           8  timer_1234.o(.data)
+    Duree_Pulse_T2                           0x200000a4   Data           8  timer_1234.o(.data)
+    Duree_Pulse_T3                           0x200000ac   Data           8  timer_1234.o(.data)
+    Duree_Pulse_T4                           0x200000b4   Data           8  timer_1234.o(.data)
+    Date_T1                                  0x200000bc   Data           8  timer_1234.o(.data)
+    Date_T2                                  0x200000c4   Data           8  timer_1234.o(.data)
+    Date_T3                                  0x200000cc   Data           8  timer_1234.o(.data)
+    Date_T4                                  0x200000d4   Data           8  timer_1234.o(.data)
+    .data                                    0x200000dc   Section        4  timer_systick.o(.data)
+    Ptr_Systick                              0x200000dc   Data           4  timer_systick.o(.data)
+    .bss                                     0x200000e0   Section      408  principal.o(.bss)
+    STACK                                    0x20000278   Section     1024  startup-rvds.o(STACK)
 
     Global Symbols
 
@@ -427,50 +452,80 @@ Image Symbol Table
     WWDG_IRQHandler                          0x0800013b   Thumb Code     0  startup-rvds.o(.text)
     __scatterload                            0x08000151   Thumb Code    28  init.o(.text)
     __scatterload_rt2                        0x08000151   Thumb Code     0  init.o(.text)
-    CLOCK_Configure                          0x08000175   Thumb Code   104  clock.o(i.CLOCK_Configure)
-    DFT                                      0x0800025d   Thumb Code   100  dft.o(i.DFT)
-    ServJeuLASER_WritePWMSoundVal            0x080002c9   Thumb Code     6  servicejeulaser.o(i.ServJeuLASER_WritePWMSoundVal)
-    SysTick_Handler                          0x080002d5   Thumb Code     6  timer_systick.o(i.SysTick_Handler)
-    TIM1_CC_IRQHandler                       0x080002e1   Thumb Code   240  timer_1234.o(i.TIM1_CC_IRQHandler)
-    TIM1_UP_IRQHandler                       0x080003ed   Thumb Code    16  timer_1234.o(i.TIM1_UP_IRQHandler)
-    TIM2_IRQHandler                          0x08000405   Thumb Code   266  timer_1234.o(i.TIM2_IRQHandler)
-    TIM3_IRQHandler                          0x08000515   Thumb Code   272  timer_1234.o(i.TIM3_IRQHandler)
-    TIM4_IRQHandler                          0x08000641   Thumb Code   272  timer_1234.o(i.TIM4_IRQHandler)
-    __scatterload_copy                       0x0800076d   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0800077b   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x0800077d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    main                                     0x0800078d   Thumb Code    50  principal.o(i.main)
-    GestionSon_Start                         0x080007cd   Thumb Code     0  gestionson.o(moncode)
-    GestionSon_callback                      0x080007d7   Thumb Code     0  gestionson.o(moncode)
-    Region$$Table$$Base                      0x08000834   Number         0  anon$$obj.o(Region$$Table)
-    LongueurSon                              0x08000854   Data           4  bruitverre.o(SecSon)
-    Region$$Table$$Limit                     0x08000854   Number         0  anon$$obj.o(Region$$Table)
-    PeriodeSonMicroSec                       0x08000858   Data           4  bruitverre.o(SecSon)
-    Son                                      0x0800085c   Data           0  bruitverre.o(SecSon)
-    LeSignal                                 0x0800336c   Data           0  signal_4_12.o(Signal)
-    TabCos                                   0x080033ec   Data           0  cossin_fract_1_15.o(Trigo)
-    TabSin                                   0x0800346c   Data           0  cossin_fract_1_15.o(Trigo)
+    Active_IT_Debordement_Timer              0x08000175   Thumb Code   204  timer_1234.o(i.Active_IT_Debordement_Timer)
+    CLOCK_Configure                          0x08000259   Thumb Code   104  clock.o(i.CLOCK_Configure)
+    CLOCK_GetADCCLK                          0x080002cd   Thumb Code     4  clock.o(i.CLOCK_GetADCCLK)
+    CLOCK_GetHCLK                            0x080002d5   Thumb Code     4  clock.o(i.CLOCK_GetHCLK)
+    CLOCK_GetTIMCLK                          0x080002dd   Thumb Code    22  clock.o(i.CLOCK_GetTIMCLK)
+    DFT                                      0x08000375   Thumb Code   100  dft.o(i.DFT)
+    GPIO_Configure                           0x080003e1   Thumb Code   240  gpio.o(i.GPIO_Configure)
+    Init_ADC1_DMA1                           0x080004e9   Thumb Code    62  adc_dma.o(i.Init_ADC1_DMA1)
+    Init_Conversion_On_Trig_Timer_ff         0x08000535   Thumb Code   102  adc_dma.o(i.Init_Conversion_On_Trig_Timer_ff)
+    Init_TimingADC_ActiveADC_ff              0x080005a5   Thumb Code   200  adc_dma.o(i.Init_TimingADC_ActiveADC_ff)
+    PWM_Init_ff                              0x08000679   Thumb Code   168  timer_1234.o(i.PWM_Init_ff)
+    ServJeuLASER_ADC_DMA                     0x08000725   Thumb Code    40  servicejeulaser.o(i.ServJeuLASER_ADC_DMA)
+    ServJeuLASER_Son_Init                    0x08000751   Thumb Code    62  servicejeulaser.o(i.ServJeuLASER_Son_Init)
+    ServJeuLASER_StartDMA                    0x0800079d   Thumb Code    26  servicejeulaser.o(i.ServJeuLASER_StartDMA)
+    ServJeuLASER_Systick_IT_Init             0x080007bd   Thumb Code    60  servicejeulaser.o(i.ServJeuLASER_Systick_IT_Init)
+    ServJeuLASER_WritePWMSoundVal            0x080007f9   Thumb Code     6  servicejeulaser.o(i.ServJeuLASER_WritePWMSoundVal)
+    Single_Channel_ADC                       0x08000805   Thumb Code    16  adc_dma.o(i.Single_Channel_ADC)
+    Start_DMA1                               0x08000815   Thumb Code    22  adc_dma.o(i.Start_DMA1)
+    SysTick_Handler                          0x08000831   Thumb Code     6  timer_systick.o(i.SysTick_Handler)
+    Systick_Period_ff                        0x0800083d   Thumb Code    34  timer_systick.o(i.Systick_Period_ff)
+    Systick_Prio_IT                          0x08000861   Thumb Code    12  timer_systick.o(i.Systick_Prio_IT)
+    TIM1_CC_IRQHandler                       0x08000875   Thumb Code   240  timer_1234.o(i.TIM1_CC_IRQHandler)
+    TIM1_UP_IRQHandler                       0x08000981   Thumb Code    16  timer_1234.o(i.TIM1_UP_IRQHandler)
+    TIM2_IRQHandler                          0x08000999   Thumb Code   266  timer_1234.o(i.TIM2_IRQHandler)
+    TIM3_IRQHandler                          0x08000aa9   Thumb Code   272  timer_1234.o(i.TIM3_IRQHandler)
+    TIM4_IRQHandler                          0x08000bd5   Thumb Code   272  timer_1234.o(i.TIM4_IRQHandler)
+    Timer_1234_Init_ff                       0x08000d01   Thumb Code   106  timer_1234.o(i.Timer_1234_Init_ff)
+    Wait_On_End_Of_DMA1                      0x08000d7d   Thumb Code    18  adc_dma.o(i.Wait_On_End_Of_DMA1)
+    __scatterload_copy                       0x08000d95   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08000da3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08000da5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    get_index_of_freq                        0x08000db5   Thumb Code    32  principal.o(i.get_index_of_freq)
+    high_index                               0x08000dd9   Thumb Code    30  principal.o(i.high_index)
+    main                                     0x08000df9   Thumb Code    36  principal.o(i.main)
+    mesures_and_dft                          0x08000e2d   Thumb Code   168  principal.o(i.mesures_and_dft)
+    GestionSon_Start                         0x08000ef1   Thumb Code     0  gestionson.o(moncode)
+    GestionSon_callback                      0x08000efb   Thumb Code     0  gestionson.o(moncode)
+    Region$$Table$$Base                      0x08000f58   Number         0  anon$$obj.o(Region$$Table)
+    LongueurSon                              0x08000f78   Data           4  bruitverre.o(SecSon)
+    Region$$Table$$Limit                     0x08000f78   Number         0  anon$$obj.o(Region$$Table)
+    PeriodeSonMicroSec                       0x08000f7c   Data           4  bruitverre.o(SecSon)
+    Son                                      0x08000f80   Data           0  bruitverre.o(SecSon)
+    TabCos                                   0x08003a90   Data           0  cossin_fract_1_15.o(Trigo)
+    TabSin                                   0x08003b10   Data           0  cossin_fract_1_15.o(Trigo)
     GestionSon_Index                         0x20000000   Data           4  principal.o(.data)
     SortieSon                                0x20000004   Data           4  principal.o(.data)
     bouton                                   0x20000008   Data           4  principal.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM1_Voie1   0x2000000c   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM1_Voie2   0x2000000d   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM1_Voie3   0x2000000e   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM1_Voie4   0x2000000f   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM2_Voie1   0x20000010   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM2_Voie2   0x20000011   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM2_Voie3   0x20000012   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM2_Voie4   0x20000013   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM3_Voie1   0x20000014   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM3_Voie2   0x20000015   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM3_Voie3   0x20000016   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM3_Voie4   0x20000017   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM4_Voie1   0x20000018   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM4_Voie2   0x20000019   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM4_Voie3   0x2000001a   Data           1  timer_1234.o(.data)
-    Enable_Fct_IT_Compare_Match_TIM4_Voie4   0x2000001b   Data           1  timer_1234.o(.data)
-    d                                        0x200000b0   Data         256  principal.o(.bss)
-    __initial_sp                             0x200005b0   Data           0  startup-rvds.o(STACK)
+    base_freq                                0x2000000c   Data           4  principal.o(.data)
+    freq_indexes                             0x20000010   Data          24  principal.o(.data)
+    touched                                  0x20000028   Data           4  principal.o(.data)
+    timer                                    0x2000002c   Data           4  principal.o(.data)
+    interruption_period                      0x20000030   Data           4  principal.o(.data)
+    last_freq_captured                       0x20000034   Data           4  principal.o(.data)
+    last_freq_apparition_count               0x20000038   Data           4  principal.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM1_Voie1   0x2000003c   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM1_Voie2   0x2000003d   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM1_Voie3   0x2000003e   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM1_Voie4   0x2000003f   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM2_Voie1   0x20000040   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM2_Voie2   0x20000041   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM2_Voie3   0x20000042   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM2_Voie4   0x20000043   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM3_Voie1   0x20000044   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM3_Voie2   0x20000045   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM3_Voie3   0x20000046   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM3_Voie4   0x20000047   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM4_Voie1   0x20000048   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM4_Voie2   0x20000049   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM4_Voie3   0x2000004a   Data           1  timer_1234.o(.data)
+    Enable_Fct_IT_Compare_Match_TIM4_Voie4   0x2000004b   Data           1  timer_1234.o(.data)
+    scores                                   0x200000e0   Data          24  principal.o(.bss)
+    signal                                   0x200000f8   Data         128  principal.o(.bss)
+    d                                        0x20000178   Data         256  principal.o(.bss)
+    __initial_sp                             0x20000678   Data           0  startup-rvds.o(STACK)
 
 
 
@@ -480,56 +535,79 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000359c, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003c70, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000034ec, Max: 0x00020000, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x08000000   0x08000000   0x000000ec   Data   RO          134    RESET               startup-rvds.o
-    0x080000ec   0x080000ec   0x00000000   Code   RO          282  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080000ec   0x080000ec   0x00000004   Code   RO          309    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080000f0   0x080000f0   0x00000004   Code   RO          312    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080000f4   0x080000f4   0x00000000   Code   RO          314    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080000f4   0x080000f4   0x00000000   Code   RO          316    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080000f4   0x080000f4   0x00000008   Code   RO          317    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080000fc   0x080000fc   0x00000004   Code   RO          324    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
-    0x08000100   0x08000100   0x00000000   Code   RO          319    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
-    0x08000100   0x08000100   0x00000000   Code   RO          321    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
-    0x08000100   0x08000100   0x00000004   Code   RO          310    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x08000104   0x08000104   0x0000004c   Code   RO          135    .text               startup-rvds.o
-    0x08000150   0x08000150   0x00000024   Code   RO          334    .text               mc_w.l(init.o)
-    0x08000174   0x08000174   0x00000074   Code   RO          191    i.CLOCK_Configure   DriverJeuLaser.lib(clock.o)
-    0x080001e8   0x080001e8   0x00000074   Code   RO          197    i.CLOCK_HPRECompute  DriverJeuLaser.lib(clock.o)
-    0x0800025c   0x0800025c   0x0000006c   Code   RO          139    i.DFT               dft.o
-    0x080002c8   0x080002c8   0x0000000c   Code   RO           85    i.ServJeuLASER_WritePWMSoundVal  servicejeulaser.o
-    0x080002d4   0x080002d4   0x0000000c   Code   RO          270    i.SysTick_Handler   DriverJeuLaser.lib(timer_systick.o)
-    0x080002e0   0x080002e0   0x0000010c   Code   RO          239    i.TIM1_CC_IRQHandler  DriverJeuLaser.lib(timer_1234.o)
-    0x080003ec   0x080003ec   0x00000018   Code   RO          240    i.TIM1_UP_IRQHandler  DriverJeuLaser.lib(timer_1234.o)
-    0x08000404   0x08000404   0x00000110   Code   RO          241    i.TIM2_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
-    0x08000514   0x08000514   0x0000012c   Code   RO          242    i.TIM3_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
-    0x08000640   0x08000640   0x0000012c   Code   RO          243    i.TIM4_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
-    0x0800076c   0x0800076c   0x0000000e   Code   RO          340    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800077a   0x0800077a   0x00000002   Code   RO          341    i.__scatterload_null  mc_w.l(handlers.o)
-    0x0800077c   0x0800077c   0x0000000e   Code   RO          342    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800078a   0x0800078a   0x00000002   PAD
-    0x0800078c   0x0800078c   0x00000040   Code   RO            4    i.main              principal.o
-    0x080007cc   0x080007cc   0x00000068   Code   RO           74    moncode             gestionson.o
-    0x08000834   0x08000834   0x00000020   Data   RO          338    Region$$Table       anon$$obj.o
-    0x08000854   0x08000854   0x00002b18   Data   RO           77    SecSon              bruitverre.o
-    0x0800336c   0x0800336c   0x00000080   Data   RO          156    Signal              signal_4_12.o
-    0x080033ec   0x080033ec   0x00000100   Data   RO          155    Trigo               cossin_fract_1_15.o
-
-
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080034ec, Size: 0x000005b0, Max: 0x00005000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003b90, Max: 0x00020000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080034ec   0x0000000c   Data   RW            6    .data               principal.o
-    0x2000000c   0x080034f8   0x000000a0   Data   RW          247    .data               DriverJeuLaser.lib(timer_1234.o)
-    0x200000ac   0x08003598   0x00000004   Data   RW          274    .data               DriverJeuLaser.lib(timer_systick.o)
-    0x200000b0        -       0x00000100   Zero   RW            5    .bss                principal.o
-    0x200001b0        -       0x00000400   Zero   RW          132    STACK               startup-rvds.o
+    0x08000000   0x08000000   0x000000ec   Data   RO          148    RESET               startup-rvds.o
+    0x080000ec   0x080000ec   0x00000000   Code   RO          346  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080000ec   0x080000ec   0x00000004   Code   RO          373    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080000f0   0x080000f0   0x00000004   Code   RO          376    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080000f4   0x080000f4   0x00000000   Code   RO          378    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080000f4   0x080000f4   0x00000000   Code   RO          380    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080000f4   0x080000f4   0x00000008   Code   RO          381    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080000fc   0x080000fc   0x00000004   Code   RO          388    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x08000100   0x08000100   0x00000000   Code   RO          383    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x08000100   0x08000100   0x00000000   Code   RO          385    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x08000100   0x08000100   0x00000004   Code   RO          374    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000104   0x08000104   0x0000004c   Code   RO          149    .text               startup-rvds.o
+    0x08000150   0x08000150   0x00000024   Code   RO          398    .text               mc_w.l(init.o)
+    0x08000174   0x08000174   0x000000e4   Code   RO          296    i.Active_IT_Debordement_Timer  DriverJeuLaser.lib(timer_1234.o)
+    0x08000258   0x08000258   0x00000074   Code   RO          255    i.CLOCK_Configure   DriverJeuLaser.lib(clock.o)
+    0x080002cc   0x080002cc   0x00000008   Code   RO          256    i.CLOCK_GetADCCLK   DriverJeuLaser.lib(clock.o)
+    0x080002d4   0x080002d4   0x00000008   Code   RO          257    i.CLOCK_GetHCLK     DriverJeuLaser.lib(clock.o)
+    0x080002dc   0x080002dc   0x00000024   Code   RO          260    i.CLOCK_GetTIMCLK   DriverJeuLaser.lib(clock.o)
+    0x08000300   0x08000300   0x00000074   Code   RO          261    i.CLOCK_HPRECompute  DriverJeuLaser.lib(clock.o)
+    0x08000374   0x08000374   0x0000006c   Code   RO          153    i.DFT               dft.o
+    0x080003e0   0x080003e0   0x00000108   Code   RO          281    i.GPIO_Configure    DriverJeuLaser.lib(gpio.o)
+    0x080004e8   0x080004e8   0x0000004c   Code   RO          226    i.Init_ADC1_DMA1    DriverJeuLaser.lib(adc_dma.o)
+    0x08000534   0x08000534   0x00000070   Code   RO          227    i.Init_Conversion_On_Trig_Timer_ff  DriverJeuLaser.lib(adc_dma.o)
+    0x080005a4   0x080005a4   0x000000d4   Code   RO          231    i.Init_TimingADC_ActiveADC_ff  DriverJeuLaser.lib(adc_dma.o)
+    0x08000678   0x08000678   0x000000ac   Code   RO          301    i.PWM_Init_ff       DriverJeuLaser.lib(timer_1234.o)
+    0x08000724   0x08000724   0x0000002c   Code   RO           95    i.ServJeuLASER_ADC_DMA  servicejeulaser.o
+    0x08000750   0x08000750   0x0000004c   Code   RO           96    i.ServJeuLASER_Son_Init  servicejeulaser.o
+    0x0800079c   0x0800079c   0x00000020   Code   RO           97    i.ServJeuLASER_StartDMA  servicejeulaser.o
+    0x080007bc   0x080007bc   0x0000003c   Code   RO           98    i.ServJeuLASER_Systick_IT_Init  servicejeulaser.o
+    0x080007f8   0x080007f8   0x0000000c   Code   RO           99    i.ServJeuLASER_WritePWMSoundVal  servicejeulaser.o
+    0x08000804   0x08000804   0x00000010   Code   RO          232    i.Single_Channel_ADC  DriverJeuLaser.lib(adc_dma.o)
+    0x08000814   0x08000814   0x0000001c   Code   RO          233    i.Start_DMA1        DriverJeuLaser.lib(adc_dma.o)
+    0x08000830   0x08000830   0x0000000c   Code   RO          334    i.SysTick_Handler   DriverJeuLaser.lib(timer_systick.o)
+    0x0800083c   0x0800083c   0x00000022   Code   RO          336    i.Systick_Period_ff  DriverJeuLaser.lib(timer_systick.o)
+    0x0800085e   0x0800085e   0x00000002   PAD
+    0x08000860   0x08000860   0x00000014   Code   RO          337    i.Systick_Prio_IT   DriverJeuLaser.lib(timer_systick.o)
+    0x08000874   0x08000874   0x0000010c   Code   RO          303    i.TIM1_CC_IRQHandler  DriverJeuLaser.lib(timer_1234.o)
+    0x08000980   0x08000980   0x00000018   Code   RO          304    i.TIM1_UP_IRQHandler  DriverJeuLaser.lib(timer_1234.o)
+    0x08000998   0x08000998   0x00000110   Code   RO          305    i.TIM2_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
+    0x08000aa8   0x08000aa8   0x0000012c   Code   RO          306    i.TIM3_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
+    0x08000bd4   0x08000bd4   0x0000012c   Code   RO          307    i.TIM4_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
+    0x08000d00   0x08000d00   0x0000007c   Code   RO          309    i.Timer_1234_Init_ff  DriverJeuLaser.lib(timer_1234.o)
+    0x08000d7c   0x08000d7c   0x00000018   Code   RO          235    i.Wait_On_End_Of_DMA1  DriverJeuLaser.lib(adc_dma.o)
+    0x08000d94   0x08000d94   0x0000000e   Code   RO          404    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08000da2   0x08000da2   0x00000002   Code   RO          405    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08000da4   0x08000da4   0x0000000e   Code   RO          406    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08000db2   0x08000db2   0x00000002   PAD
+    0x08000db4   0x08000db4   0x00000024   Code   RO            4    i.get_index_of_freq  principal.o
+    0x08000dd8   0x08000dd8   0x0000001e   Code   RO            5    i.high_index        principal.o
+    0x08000df6   0x08000df6   0x00000002   PAD
+    0x08000df8   0x08000df8   0x00000034   Code   RO            6    i.main              principal.o
+    0x08000e2c   0x08000e2c   0x000000c4   Code   RO            7    i.mesures_and_dft   principal.o
+    0x08000ef0   0x08000ef0   0x00000068   Code   RO           88    moncode             gestionson.o
+    0x08000f58   0x08000f58   0x00000020   Data   RO          402    Region$$Table       anon$$obj.o
+    0x08000f78   0x08000f78   0x00002b18   Data   RO           91    SecSon              bruitverre.o
+    0x08003a90   0x08003a90   0x00000100   Data   RO          169    Trigo               cossin_fract_1_15.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003b90, Size: 0x00000678, Max: 0x00005000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x08003b90   0x0000003c   Data   RW            9    .data               principal.o
+    0x2000003c   0x08003bcc   0x000000a0   Data   RW          311    .data               DriverJeuLaser.lib(timer_1234.o)
+    0x200000dc   0x08003c6c   0x00000004   Data   RW          338    .data               DriverJeuLaser.lib(timer_systick.o)
+    0x200000e0        -       0x00000198   Zero   RW            8    .bss                principal.o
+    0x20000278        -       0x00000400   Zero   RW          146    STACK               startup-rvds.o
 
 
 ==============================================================================
@@ -543,23 +621,24 @@ Image component sizes
          0          0        256          0          0          0   cossin_fract_1_15.o
        108          8          0          0          0        682   dft.o
        104         16          0          0          0        260   gestionson.o
-        64         14          0         12        256       2701   principal.o
-        12          6          0          0          0        484   servicejeulaser.o
-         0          0        128          0          0          0   signal_4_12.o
+       314         48          0         60        408     209741   principal.o
+       224         30          0          0          0       2762   servicejeulaser.o
         76         20        236          0       1024        792   startup-rvds.o
 
     ----------------------------------------------------------------------
-       364         64      11684         12       1280       4919   Object Totals
+       828        122      11556         60       1432     214237   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          0          0          0          0   (incl. Padding)
+         2          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
 
-       232         12          0          0          0        148   clock.o
-      1164         98          0        160          0        424   timer_1234.o
-        12          6          0          4          0         68   timer_systick.o
+       468         48          0          0          0        436   adc_dma.o
+       284         34          0          0          0        352   clock.o
+       264         24          0          0          0         84   gpio.o
+      1688        144          0        160          0        672   timer_1234.o
+        66         14          0          4          0        204   timer_systick.o
          0          0          0          0          0          0   entry.o
          0          0          0          0          0          0   entry10a.o
          0          0          0          0          0          0   entry11a.o
@@ -573,18 +652,18 @@ Image component sizes
         36          8          0          0          0         68   init.o
 
     ----------------------------------------------------------------------
-      1500        132          0        164          0        708   Library Totals
-         2          0          0          0          0          0   (incl. Padding)
+      2864        280          0        164          0       1816   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-      1408        116          0        164          0        640   DriverJeuLaser.lib
+      2770        264          0        164          0       1748   DriverJeuLaser.lib
         90         16          0          0          0         68   mc_w.l
 
     ----------------------------------------------------------------------
-      1500        132          0        164          0        708   Library Totals
+      2864        280          0        164          0       1816   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -593,15 +672,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1864        196      11684        176       1280       5311   Grand Totals
-      1864        196      11684        176       1280       5311   ELF Image Totals
-      1864        196      11684        176          0          0   ROM Totals
+      3692        402      11556        224       1432     214697   Grand Totals
+      3692        402      11556        224       1432     214697   ELF Image Totals
+      3692        402      11556        224          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                13548 (  13.23kB)
-    Total RW  Size (RW Data + ZI Data)              1456 (   1.42kB)
-    Total ROM Size (Code + RO Data + RW Data)      13724 (  13.40kB)
+    Total RO  Size (Code + RO Data)                15248 (  14.89kB)
+    Total RW  Size (RW Data + ZI Data)              1656 (   1.62kB)
+    Total ROM Size (Code + RO Data + RW Data)      15472 (  15.11kB)
 
 ==============================================================================
 

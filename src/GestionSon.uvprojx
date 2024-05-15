@@ -339,7 +339,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>STM32F103xB,USE_FULL_LL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Driver;.\GestionSon</IncludePath>
+              <IncludePath>.\Driver;.\GestionSon;.\ServiceDFT;.\ModuleAffichage</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -444,11 +444,6 @@
               <FilePath>.\ServiceDFT\DFT.c</FilePath>
             </File>
             <File>
-              <FileName>DFT.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ServiceDFT\DFT.h</FilePath>
-            </File>
-            <File>
               <FileName>CosSin_Fract_1_15.asm</FileName>
               <FileType>2</FileType>
               <FilePath>.\ServiceDFT\CosSin_Fract_1_15.asm</FilePath>
@@ -467,6 +462,26 @@
               <FileName>Signal_4_12.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\ServiceDFT\Signal_4_12.h</FilePath>
+            </File>
+            <File>
+              <FileName>DFT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ServiceDFT\DFT.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ModuleAffichage</GroupName>
+          <Files>
+            <File>
+              <FileName>Affichage_Valise.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ModuleAffichage\Affichage_Valise.h</FilePath>
+            </File>
+            <File>
+              <FileName>affichage_valise.o</FileName>
+              <FileType>3</FileType>
+              <FilePath>.\ModuleAffichage\affichage_valise.o</FilePath>
             </File>
           </Files>
         </Group>
@@ -982,11 +997,6 @@
               <FilePath>.\ServiceDFT\DFT.c</FilePath>
             </File>
             <File>
-              <FileName>DFT.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ServiceDFT\DFT.h</FilePath>
-            </File>
-            <File>
               <FileName>CosSin_Fract_1_15.asm</FileName>
               <FileType>2</FileType>
               <FilePath>.\ServiceDFT\CosSin_Fract_1_15.asm</FilePath>
@@ -1005,6 +1015,26 @@
               <FileName>Signal_4_12.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\ServiceDFT\Signal_4_12.h</FilePath>
+            </File>
+            <File>
+              <FileName>DFT.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ServiceDFT\DFT.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ModuleAffichage</GroupName>
+          <Files>
+            <File>
+              <FileName>Affichage_Valise.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ModuleAffichage\Affichage_Valise.h</FilePath>
+            </File>
+            <File>
+              <FileName>affichage_valise.o</FileName>
+              <FileType>3</FileType>
+              <FilePath>.\ModuleAffichage\affichage_valise.o</FilePath>
             </File>
           </Files>
         </Group>

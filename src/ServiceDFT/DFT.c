@@ -28,7 +28,7 @@ int DFT(unsigned short int * Sig, int k) {
 	/*
 	A cause des retenues, après 64 (2^6) itérations, les formats sont plutôt
 	X_re_k -> format 11.11 (6.0 + 5.11)
-	X_im_k -> format 11.11 (6.0 + 5.11)
+	X_im_k -> format 11.11 (6.0 + 5.11)  
 	*/
 	X_re_k_2 = X_re_k >> 6; // format 11.5
 	X_im_k_2 = X_im_k >> 6; // format 11.5
