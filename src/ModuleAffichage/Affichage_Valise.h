@@ -54,7 +54,7 @@ void Prepare_Clear_LED(char LED);
 	* @param  None
   * @retval None
   */
-void  (void);
+void  Mise_A_Jour_Afficheurs_LED(void);
 
 /**
 	* @brief  Spécifie le capteut actif, à savoir celui effectivement relié

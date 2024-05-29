@@ -74,6 +74,8 @@ GestionSon_callback
 	bl ServJeuLASER_WritePWMSoundVal
 	pop {pc}
 exit
+	pop {r4-r8}
+	pop {pc}
 	bx lr
 	
 

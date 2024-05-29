@@ -1,5 +1,6 @@
 .\obj\principal.o: Principal\principal.c
 .\obj\principal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\principal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\obj\principal.o: .\Driver\DriverJeuLaser.h
 .\obj\principal.o: C:\Programdata\Keil\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h
 .\obj\principal.o: .\RTE\_CibleSondeKEIL\RTE_Components.h
@@ -12,3 +13,4 @@
 .\obj\principal.o: .\Driver\ServiceJeuLaser.h
 .\obj\principal.o: .\GestionSon\GestionSon.h
 .\obj\principal.o: .\ServiceDFT\DFT.h
+.\obj\principal.o: .\ModuleAffichage\Affichage_Valise.h

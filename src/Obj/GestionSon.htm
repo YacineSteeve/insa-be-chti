@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Obj\GestionSon.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Obj\GestionSon.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed May 15 15:04:15 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed May 29 11:00:29 2024
 <BR><P>
 <H3>Maximum Stack Usage =         64 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -12,7 +12,7 @@ main &rArr; ServJeuLASER_Son_Init &rArr; PWM_Init_ff &rArr; Timer_1234_Init_ff
 <H3>
 Functions with no stack information
 </H3><UL>
- <LI><a href="#[55]">GestionSon_Start</a>
+ <LI><a href="#[61]">GestionSon_Start</a>
  <LI><a href="#[38]">GestionSon_callback</a>
 </UL>
 </UL>
@@ -70,6 +70,7 @@ Function Pointers
  <LI><a href="#[2d]">SPI1_IRQHandler</a> from startup-rvds.o(.text) referenced from startup-rvds.o(RESET)
  <LI><a href="#[2e]">SPI2_IRQHandler</a> from startup-rvds.o(.text) referenced from startup-rvds.o(RESET)
  <LI><a href="#[6]">SVC_Handler</a> from startup-rvds.o(.text) referenced from startup-rvds.o(RESET)
+ <LI><a href="#[3f]">Sortir_Trame</a> from affichage_valise.o(.text) referenced from affichage_valise.o(.text)
  <LI><a href="#[9]">SysTick_Handler</a> from timer_systick.o(i.SysTick_Handler) referenced from startup-rvds.o(RESET)
  <LI><a href="#[36]">SystemInit</a> from startup-rvds.o(.text) referenced from startup-rvds.o(.text)
  <LI><a href="#[c]">TAMPER_IRQHandler</a> from startup-rvds.o(.text) referenced from startup-rvds.o(RESET)
@@ -99,27 +100,27 @@ Global Symbols
 <P><STRONG><a name="[37]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup-rvds.o(.text)
 </UL>
-<P><STRONG><a name="[57]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[63]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[3a]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[3c]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<P><STRONG><a name="[44]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[58]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[64]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[59]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[65]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[5a]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[66]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[5b]"></a>__rt_lib_shutdown_fini</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry12b.o(.ARM.Collect$$$$0000000E))
+<P><STRONG><a name="[67]"></a>__rt_lib_shutdown_fini</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry12b.o(.ARM.Collect$$$$0000000E))
 
-<P><STRONG><a name="[5c]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[68]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000F))
 
-<P><STRONG><a name="[5d]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$00000011))
+<P><STRONG><a name="[69]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$00000011))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, startup-rvds.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup-rvds.o(RESET)
@@ -301,144 +302,209 @@ Global Symbols
 <P><STRONG><a name="[a]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup-rvds.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup-rvds.o(RESET)
 </UL>
-<P><STRONG><a name="[3b]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
-</UL>
-<BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
-</UL>
-
-<P><STRONG><a name="[5e]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
-
-<P><STRONG><a name="[4a]"></a>Active_IT_Debordement_Timer</STRONG> (Thumb, 204 bytes, Stack size 24 bytes, timer_1234.o(i.Active_IT_Debordement_Timer))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Active_IT_Debordement_Timer
-</UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
+<P><STRONG><a name="[42]"></a>Mise_A_Jour_Afficheurs_LED</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, affichage_valise.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Affichage
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mesures_and_dft
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[3d]"></a>CLOCK_Configure</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, clock.o(i.CLOCK_Configure))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CLOCK_Configure
+<P><STRONG><a name="[3f]"></a>Sortir_Trame</STRONG> (Thumb, 208 bytes, Stack size 0 bytes, affichage_valise.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> affichage_valise.o(.text)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_HPRECompute
+<P><STRONG><a name="[3d]"></a>Decodage_7_Seg</STRONG> (Thumb, 100 bytes, Stack size 0 bytes, affichage_valise.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Prepare_Afficheur
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Affichage
+</UL>
+
+<P><STRONG><a name="[3c]"></a>Init_Affichage</STRONG> (Thumb, 226 bytes, Stack size 16 bytes, affichage_valise.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Init_Affichage &rArr; Active_IT_Debordement_Timer
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Decodage_7_Seg
+<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Configure
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Active_IT_Debordement_Timer
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Mise_A_Jour_Afficheurs_LED
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[42]"></a>CLOCK_GetADCCLK</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, clock.o(i.CLOCK_GetADCCLK))
-<BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TimingADC_ActiveADC_ff
+<P><STRONG><a name="[43]"></a>Prepare_Afficheur</STRONG> (Thumb, 76 bytes, Stack size 28 bytes, affichage_valise.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Prepare_Afficheur
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Decodage_7_Seg
+</UL>
+<BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mesures_and_dft
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[43]"></a>CLOCK_GetHCLK</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, clock.o(i.CLOCK_GetHCLK))
-<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TimingADC_ActiveADC_ff
+<P><STRONG><a name="[6a]"></a>Prepare_Set_Point_Unite</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, affichage_valise.o(.text), UNUSED)
+
+<P><STRONG><a name="[5d]"></a>Prepare_Clear_Point_Unite</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, affichage_valise.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[51]"></a>CLOCK_GetTIMCLK</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, clock.o(i.CLOCK_GetTIMCLK))
-<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
+<P><STRONG><a name="[5b]"></a>Prepare_Set_LED</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, affichage_valise.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_random_target
 </UL>
 
-<P><STRONG><a name="[52]"></a>DFT</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, dft.o(i.DFT))
+<P><STRONG><a name="[58]"></a>Prepare_Clear_LED</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, affichage_valise.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_random_target
+</UL>
+
+<P><STRONG><a name="[5a]"></a>Choix_Capteur</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, affichage_valise.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_random_target
+</UL>
+
+<P><STRONG><a name="[59]"></a>rand</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, rand.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_random_target
+</UL>
+
+<P><STRONG><a name="[5c]"></a>srand</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, rand.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[3b]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+</UL>
+
+<P><STRONG><a name="[6b]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+
+<P><STRONG><a name="[40]"></a>Active_IT_Debordement_Timer</STRONG> (Thumb, 204 bytes, Stack size 24 bytes, timer_1234.o(i.Active_IT_Debordement_Timer))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Active_IT_Debordement_Timer
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Affichage
+</UL>
+
+<P><STRONG><a name="[45]"></a>CLOCK_Configure</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, clock.o(i.CLOCK_Configure))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CLOCK_Configure
+</UL>
+<BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_HPRECompute
+</UL>
+<BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[4a]"></a>CLOCK_GetADCCLK</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, clock.o(i.CLOCK_GetADCCLK))
+<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TimingADC_ActiveADC_ff
+</UL>
+
+<P><STRONG><a name="[4b]"></a>CLOCK_GetHCLK</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, clock.o(i.CLOCK_GetHCLK))
+<BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TimingADC_ActiveADC_ff
+</UL>
+
+<P><STRONG><a name="[56]"></a>CLOCK_GetTIMCLK</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, clock.o(i.CLOCK_GetTIMCLK))
+<BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
+</UL>
+
+<P><STRONG><a name="[5e]"></a>DFT</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, dft.o(i.DFT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = DFT
 </UL>
 <BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mesures_and_dft
 </UL>
 
-<P><STRONG><a name="[49]"></a>GPIO_Configure</STRONG> (Thumb, 240 bytes, Stack size 20 bytes, gpio.o(i.GPIO_Configure))
+<P><STRONG><a name="[41]"></a>GPIO_Configure</STRONG> (Thumb, 240 bytes, Stack size 20 bytes, gpio.o(i.GPIO_Configure))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = GPIO_Configure
 </UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
+<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Affichage
 </UL>
 
-<P><STRONG><a name="[47]"></a>Init_ADC1_DMA1</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, adc_dma.o(i.Init_ADC1_DMA1))
-<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
+<P><STRONG><a name="[4e]"></a>Init_ADC1_DMA1</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, adc_dma.o(i.Init_ADC1_DMA1))
+<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
 </UL>
 
-<P><STRONG><a name="[3f]"></a>Init_Conversion_On_Trig_Timer_ff</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, adc_dma.o(i.Init_Conversion_On_Trig_Timer_ff))
+<P><STRONG><a name="[47]"></a>Init_Conversion_On_Trig_Timer_ff</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, adc_dma.o(i.Init_Conversion_On_Trig_Timer_ff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Init_Conversion_On_Trig_Timer_ff &rArr; PWM_Init_ff &rArr; Timer_1234_Init_ff
 </UL>
-<BR>[Calls]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Init_ff
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Init_ff
 </UL>
-<BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
 </UL>
 
-<P><STRONG><a name="[41]"></a>Init_TimingADC_ActiveADC_ff</STRONG> (Thumb, 200 bytes, Stack size 24 bytes, adc_dma.o(i.Init_TimingADC_ActiveADC_ff))
+<P><STRONG><a name="[49]"></a>Init_TimingADC_ActiveADC_ff</STRONG> (Thumb, 200 bytes, Stack size 24 bytes, adc_dma.o(i.Init_TimingADC_ActiveADC_ff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Init_TimingADC_ActiveADC_ff
 </UL>
-<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetHCLK
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetADCCLK
+<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetHCLK
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetADCCLK
 </UL>
-<BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
+<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
 </UL>
 
-<P><STRONG><a name="[40]"></a>PWM_Init_ff</STRONG> (Thumb, 168 bytes, Stack size 24 bytes, timer_1234.o(i.PWM_Init_ff))
+<P><STRONG><a name="[48]"></a>PWM_Init_ff</STRONG> (Thumb, 168 bytes, Stack size 24 bytes, timer_1234.o(i.PWM_Init_ff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = PWM_Init_ff &rArr; Timer_1234_Init_ff
 </UL>
-<BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
+<BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Conversion_On_Trig_Timer_ff
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
+<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Conversion_On_Trig_Timer_ff
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
 </UL>
 
-<P><STRONG><a name="[45]"></a>ServJeuLASER_ADC_DMA</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, servicejeulaser.o(i.ServJeuLASER_ADC_DMA))
+<P><STRONG><a name="[4c]"></a>ServJeuLASER_ADC_DMA</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, servicejeulaser.o(i.ServJeuLASER_ADC_DMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = ServJeuLASER_ADC_DMA &rArr; Init_Conversion_On_Trig_Timer_ff &rArr; PWM_Init_ff &rArr; Timer_1234_Init_ff
 </UL>
-<BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Single_Channel_ADC
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TimingADC_ActiveADC_ff
-<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Conversion_On_Trig_Timer_ff
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_ADC1_DMA1
+<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Single_Channel_ADC
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TimingADC_ActiveADC_ff
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Conversion_On_Trig_Timer_ff
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_ADC1_DMA1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[48]"></a>ServJeuLASER_Son_Init</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, servicejeulaser.o(i.ServJeuLASER_Son_Init))
+<P><STRONG><a name="[4f]"></a>ServJeuLASER_Son_Init</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, servicejeulaser.o(i.ServJeuLASER_Son_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = ServJeuLASER_Son_Init &rArr; PWM_Init_ff &rArr; Timer_1234_Init_ff
 </UL>
-<BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Init_ff
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Configure
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Active_IT_Debordement_Timer
+<BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_1234_Init_ff
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Init_ff
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Configure
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Active_IT_Debordement_Timer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[4b]"></a>ServJeuLASER_StartDMA</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, servicejeulaser.o(i.ServJeuLASER_StartDMA))
+<P><STRONG><a name="[50]"></a>ServJeuLASER_StartDMA</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, servicejeulaser.o(i.ServJeuLASER_StartDMA))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = ServJeuLASER_StartDMA
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wait_On_End_Of_DMA1
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start_DMA1
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Wait_On_End_Of_DMA1
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start_DMA1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mesures_and_dft
 </UL>
 
-<P><STRONG><a name="[4e]"></a>ServJeuLASER_Systick_IT_Init</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, servicejeulaser.o(i.ServJeuLASER_Systick_IT_Init))
+<P><STRONG><a name="[53]"></a>ServJeuLASER_Systick_IT_Init</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, servicejeulaser.o(i.ServJeuLASER_Systick_IT_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = ServJeuLASER_Systick_IT_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_Prio_IT
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_Period_ff
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_Prio_IT
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systick_Period_ff
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[56]"></a>ServJeuLASER_WritePWMSoundVal</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, servicejeulaser.o(i.ServJeuLASER_WritePWMSoundVal))
+<P><STRONG><a name="[62]"></a>ServJeuLASER_WritePWMSoundVal</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, servicejeulaser.o(i.ServJeuLASER_WritePWMSoundVal))
 <BR><BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GestionSon_callback
 </UL>
 
-<P><STRONG><a name="[46]"></a>Single_Channel_ADC</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, adc_dma.o(i.Single_Channel_ADC))
-<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
+<P><STRONG><a name="[4d]"></a>Single_Channel_ADC</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, adc_dma.o(i.Single_Channel_ADC))
+<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
 </UL>
 
-<P><STRONG><a name="[4c]"></a>Start_DMA1</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, adc_dma.o(i.Start_DMA1))
-<BR><BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_StartDMA
+<P><STRONG><a name="[51]"></a>Start_DMA1</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, adc_dma.o(i.Start_DMA1))
+<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_StartDMA
 </UL>
 
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, timer_systick.o(i.SysTick_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup-rvds.o(RESET)
 </UL>
-<P><STRONG><a name="[4f]"></a>Systick_Period_ff</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, timer_systick.o(i.Systick_Period_ff))
-<BR><BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Systick_IT_Init
+<P><STRONG><a name="[54]"></a>Systick_Period_ff</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, timer_systick.o(i.Systick_Period_ff))
+<BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Systick_IT_Init
 </UL>
 
-<P><STRONG><a name="[50]"></a>Systick_Prio_IT</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, timer_systick.o(i.Systick_Prio_IT))
-<BR><BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Systick_IT_Init
+<P><STRONG><a name="[55]"></a>Systick_Prio_IT</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, timer_systick.o(i.Systick_Prio_IT))
+<BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Systick_IT_Init
 </UL>
 
 <P><STRONG><a name="[25]"></a>TIM1_CC_IRQHandler</STRONG> (Thumb, 240 bytes, Stack size 16 bytes, timer_1234.o(i.TIM1_CC_IRQHandler))
@@ -464,72 +530,96 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup-rvds.o(RESET)
 </UL>
-<P><STRONG><a name="[44]"></a>Timer_1234_Init_ff</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, timer_1234.o(i.Timer_1234_Init_ff))
+<P><STRONG><a name="[3e]"></a>Timer_1234_Init_ff</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, timer_1234.o(i.Timer_1234_Init_ff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Timer_1234_Init_ff
 </UL>
-<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetTIMCLK
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetHCLK
+<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetTIMCLK
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_GetHCLK
 </UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Init_ff
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
-</UL>
-
-<P><STRONG><a name="[4d]"></a>Wait_On_End_Of_DMA1</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, adc_dma.o(i.Wait_On_End_Of_DMA1))
-<BR><BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_StartDMA
+<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Init_ff
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Affichage
 </UL>
 
-<P><STRONG><a name="[5f]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[52]"></a>Wait_On_End_Of_DMA1</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, adc_dma.o(i.Wait_On_End_Of_DMA1))
+<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_StartDMA
+</UL>
 
-<P><STRONG><a name="[60]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[6c]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[61]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[6d]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[54]"></a>get_index_of_freq</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, principal.o(i.get_index_of_freq))
+<P><STRONG><a name="[6e]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+
+<P><STRONG><a name="[60]"></a>get_index_of_freq</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, principal.o(i.get_index_of_freq))
 <BR><BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mesures_and_dft
 </UL>
 
-<P><STRONG><a name="[53]"></a>high_index</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, principal.o(i.high_index))
+<P><STRONG><a name="[57]"></a>get_random_target</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, principal.o(i.get_random_target))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = get_random_target
+</UL>
+<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Prepare_Set_LED
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Prepare_Clear_LED
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Choix_Capteur
+</UL>
+<BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mesures_and_dft
+<LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[5f]"></a>high_index</STRONG> (Thumb, 34 bytes, Stack size 12 bytes, principal.o(i.high_index))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = high_index
 </UL>
 <BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mesures_and_dft
 </UL>
 
-<P><STRONG><a name="[35]"></a>main</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, principal.o(i.main))
+<P><STRONG><a name="[35]"></a>main</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, principal.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = main &rArr; ServJeuLASER_Son_Init &rArr; PWM_Init_ff &rArr; Timer_1234_Init_ff
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Systick_IT_Init
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
-<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_Configure
+<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;srand
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Systick_IT_Init
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_Son_Init
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_ADC_DMA
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Prepare_Clear_Point_Unite
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Prepare_Clear_LED
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Prepare_Afficheur
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Mise_A_Jour_Afficheurs_LED
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Affichage
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_Configure
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_random_target
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[39]"></a>mesures_and_dft</STRONG> (Thumb, 168 bytes, Stack size 16 bytes, principal.o(i.mesures_and_dft))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
-<LI>Call Chain = mesures_and_dft &rArr; DFT
+<P><STRONG><a name="[39]"></a>mesures_and_dft</STRONG> (Thumb, 182 bytes, Stack size 16 bytes, principal.o(i.mesures_and_dft))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44 + Unknown Stack Size
+<LI>Call Chain = mesures_and_dft &rArr; Prepare_Afficheur
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_StartDMA
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GestionSon_Start
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DFT
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;high_index
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_index_of_freq
+<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_StartDMA
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Prepare_Afficheur
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Mise_A_Jour_Afficheurs_LED
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GestionSon_Start
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DFT
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;high_index
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_random_target
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_index_of_freq
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> principal.o(i.main)
 </UL>
-<P><STRONG><a name="[55]"></a>GestionSon_Start</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gestionson.o(moncode))
+<P><STRONG><a name="[61]"></a>GestionSon_Start</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gestionson.o(moncode))
 <BR><BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mesures_and_dft
 </UL>
 
 <P><STRONG><a name="[38]"></a>GestionSon_callback</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gestionson.o(moncode))
-<BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_WritePWMSoundVal
+<BR><BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServJeuLASER_WritePWMSoundVal
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> principal.o(i.main)
 </UL><P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[3e]"></a>CLOCK_HPRECompute</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, clock.o(i.CLOCK_HPRECompute))
-<BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_Configure
+<P><STRONG><a name="[46]"></a>CLOCK_HPRECompute</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, clock.o(i.CLOCK_HPRECompute))
+<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_Configure
 </UL>
 <P>
 <H3>
